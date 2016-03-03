@@ -229,6 +229,7 @@ Ext.extend(QGIS.WMSCapabilitiesLoader, GeoExt.tree.WMSCapabilitiesLoader, {
         }, OpenLayers.Format.WMSCapabilities.v1_3.prototype.readers["wms"])
       }
     }).read(this.WMSCapabilities);
+    console.log(this.projectSettings.capability.request);
     this.processLayer(this.projectSettings.capability, this.projectSettings.capability.request.getmap.href, node);
 
     // WMTS base layers
