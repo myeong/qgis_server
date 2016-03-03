@@ -38,6 +38,7 @@ else {
         //older IEs do not know document.documentURI
         urlString = window.location.href;
     }
+    console.log(urlString)
     // replace spaces encoded as '+'
     urlString = urlString.replace(/\+/g, ' ');
     var urlArray = urlString.split('?');
@@ -48,6 +49,7 @@ else {
     } else {
         norewrite = false;
     }
+
     //patch ends
     if (!norewrite) {
         //Get map name from base URL (e.g. http://example.com/maps/mapname)
@@ -62,6 +64,8 @@ else {
         }
         wmsURI = serverAndCGI + suffix + "/" + map + "?";
         printURI = printServer + suffix + "/" + map + "?";
+        console.log(wmsURI)
+        console.log(printURI)
         wmsMapName = map;
     }
     if (urlArray.length > 1) {
