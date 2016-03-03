@@ -37,8 +37,7 @@ else {
     } else {
         //older IEs do not know document.documentURI
         urlString = window.location.href;
-    }
-    console.log(urlString)
+    }    
     // replace spaces encoded as '+'
     urlString = urlString.replace(/\+/g, ' ');
     var urlArray = urlString.split('?');
@@ -63,11 +62,11 @@ else {
             suffix = urlBaseArray[3].substr(dashpos);
         }
         wmsURI = serverAndCGI + suffix + "/" + map + "?";
-        printURI = printServer + suffix + "/" + map + "?";
-        console.log(wmsURI)
-        console.log(printURI)
+        printURI = printServer + suffix + "/" + map + "?";  
+        console.log(map)      
         wmsMapName = map;
     }
+    console.log(urlArray)
     if (urlArray.length > 1) {
         urlParams = Ext.urlDecode(urlArray[1]);
         if (norewrite) {
