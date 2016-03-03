@@ -23,6 +23,8 @@
 // parse GetProjectSettings from QGIS Mapserver
 // extends GeoExt.tree.WMSCapabilitiesLoader in order to expose the WMSCapabilities Tree to later read out settings from the tree
 QGIS.WMSCapabilitiesLoader = function(config) {
+  console.log(this)
+  console.log(config)
   Ext.apply(this, config);
   QGIS.WMSCapabilitiesLoader.superclass.constructor.call(this,config);
 };
@@ -228,8 +230,7 @@ Ext.extend(QGIS.WMSCapabilitiesLoader, GeoExt.tree.WMSCapabilitiesLoader, {
                     }
         }, OpenLayers.Format.WMSCapabilities.v1_3.prototype.readers["wms"])
       }
-    }).read(this.WMSCapabilities);
-    console.log(this.projectSettings);
+    }).read(this.WMSCapabilities);    
     this.processLayer(this.projectSettings.capability, this.projectSettings.capability.request.getmap.href, node);
 
     // WMTS base layers
